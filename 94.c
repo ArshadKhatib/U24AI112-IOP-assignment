@@ -13,9 +13,6 @@ void reverse(char *A, char *B, int N)
         B[i] = A[N - i -1];
     }
     B[N] ='\0';
-    
-    
-    
 }
 
 int main()
