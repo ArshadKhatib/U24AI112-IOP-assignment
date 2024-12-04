@@ -16,6 +16,8 @@ int main()
     Student *strpt;
     Student students[50];
 
+    int Z =0;
+
     FILE *txt = fopen("LNMIITSTUDENT.DAT","wb");
     while (C!=0)
     {
@@ -24,31 +26,32 @@ int main()
         scanf("%d",&C);
         if (C ==1)
         {
-            printf("Enter the number of students: \n");
-            scanf("%d",&N);
-            for (int i = 0; i < N; i++)
-    {
+        printf("Enter the number of students: \n");
+        scanf("%d",&N);
+        for (int i = Z ; i < Z+N; i++)
+        {
         printf("Enter the Roll no: \n");
         scanf("%d", &students[i].roll_no);
         printf("Enter the name: \n");
         scanf(" %[^\n]s", &students[i].name);
         printf("Enter the Total marks: \n");
         scanf("%d", &students[i].T_marks);
-    }
-    fclose(txt);
+        }
+        fclose(txt);
 
-    FILE *text = fopen("LNMIITSTUDENT.JAVA","rb");
-    printf("\n--------Student Details-------------\n");
-    printf("Roll No.\tName\t\tMarks\n");
-    for (int i = 0; i < N; i++)
-    {
-        printf("%d\t\t%s\t\t%d\n",students[i].roll_no,students[i].name,students[i].T_marks);
-    }
-    printf("\n------------------------------------\n");
-    fclose(text);
+        FILE *text = fopen("LNMIITSTUDENT.JAVA","rb");
+        printf("\n--------Student Details-------------\n");
+        printf("Roll No.\tName\t\tMarks\n");
+        for (int i = 0; i < Z+N; i++)
+        {
+            printf("%d\t\t%s\t\t%d\n",students[i].roll_no,students[i].name,students[i].T_marks);
+        }
+        printf("\n------------------------------------\n");
+        fclose(text);
+
+        Z += N;
+            }
 
         }
-        
-    }
     return 0;
 }
